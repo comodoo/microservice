@@ -28,3 +28,4 @@ a2 ansible_host=101.0.10.104
 [dcos-agents-public]
 p1 ansible_host=101.0.10.105
 p2 ansible_host=101.0.10.106
+

@@ -66,12 +66,13 @@
     chdir: /home/vagrant
     creates: .skip
 
+# FIXME: hardcoded IP of bootstrap node
 - name: Running dockerized Nginx for installation
   docker_container:
     name: nginx-bootstrap
     image: nginx
     ports:
-      - "100.0.10.100:8080:80"
+      - "101.0.10.101:8080:80"
     volumes:
       - /home/vagrant/genconf/serve:/usr/share/nginx/html
 

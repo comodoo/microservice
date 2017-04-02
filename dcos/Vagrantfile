@@ -24,13 +24,7 @@ end
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Disabling the default /vagrant share
   config.vm.synced_folder ".", "/vagrant", disabled: true
-
-   ANSIBLE_RAW_SSH_ARGS = []
-
-  cluster.each do |servers|
-    host = servers['name']
-    ANSIBLE_RAW_SSH_ARGS << "-o IdentityFile=.vagrant/machines/#{host}/libvirt/private_key"
-  end
+  config.ssh.insert_key = false
 
   i = 0
   cluster.each do |servers|
@@ -51,7 +45,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
           node.vm.provision :ansible do |ansible|
             ansible.verbose = "v"
             ansible.inventory_path = "provisioning/inventory"
-            ansible.raw_ssh_args = ANSIBLE_RAW_SSH_ARGS
             ansible.playbook = "provisioning/site.yml"
             ansible.limit = "all"
           end # provison
