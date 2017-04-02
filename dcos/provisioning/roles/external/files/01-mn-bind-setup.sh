@@ -99,6 +99,7 @@ ${HOST_MASTER1}.  IN A ${IP_MASTER1}
 ${HOST_PRIVATE1}.  IN A ${IP_PRIVATE1}
 ${HOST_PRIVATE2}.  IN A ${IP_PRIVATE2}
 ${HOST_PUBLIC1}.  IN A ${IP_PUBLIC1}
+${HOST_PUBLIC2}.  IN A ${IP_PUBLIC2}
 !
 
 tee etc/named/zones/db.${IP_REV} <<!
@@ -121,6 +122,7 @@ ${IP_MASTER1_INV} IN        PTR     ${HOST_MASTER1}.
 ${IP_PRIVATE1_INV} IN        PTR     ${HOST_PRIVATE1}.     
 ${IP_PRIVATE2_INV} IN        PTR     ${HOST_PRIVATE2}.     
 ${IP_PUBLIC1_INV} IN        PTR     ${HOST_PUBLIC1}.     
+${IP_PUBLIC2_INV} IN        PTR     ${HOST_PUBLIC2}.     
 !
 
 tee etc/named/zones/db.cloudapps.${DOMAIN} <<!

@@ -1,5 +1,5 @@
 ---
-#- include: bind.yml
+- include: bind.yml
 # - include: nfs.yml
 # - include: ldap.yml
 #- include: kerberos.yml

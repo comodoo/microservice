@@ -1,5 +1,5 @@
 $TTL 604800 ; 1 week
-@ IN SOA ext.stratio.lan. admin.stratio.lan. (
+@ IN SOA ext.comodoo.dcos. admin.comodoo.dcos. (
     3         ; Serial
     604800    ; Refresh
     86400     ; Retry
@@ -7,13 +7,14 @@ $TTL 604800 ; 1 week
     604800 )  ; Negative Cache TTL
 
 ; name servers
-@    IN      NS     ext.stratio.lan. 
+@    IN      NS     ext.comodoo.dcos. 
 
 ; PTR Records
-; 100 IN        PTR     dcos-cluster.stratio.lan. 
-100 IN        PTR     ext.stratio.lan. 
-101 IN        PTR     boot.stratio.lan. 
-102 IN        PTR     m1.stratio.lan.     
-103 IN        PTR     a1.stratio.lan.     
-104 IN        PTR     a2.stratio.lan.     
-105 IN        PTR     p1.stratio.lan.     
+100 IN        PTR     dcos-cluster.comodoo.dcos. 
+100 IN        PTR     ext.comodoo.dcos. 
+101 IN        PTR     boot.comodoo.dcos. 
+102 IN        PTR     m1.comodoo.dcos.     
+103 IN        PTR     a1.comodoo.dcos.     
+104 IN        PTR     a2.comodoo.dcos.     
+105 IN        PTR     p1.comodoo.dcos.     
+106 IN        PTR     .     
