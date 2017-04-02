@@ -1,0 +1,15 @@
+zone "stratio.lan" IN {
+    type master;
+    file "/etc/named/zones/db.stratio.lan"; 
+};
+
+zone "10.0.101.in-addr.arpa" IN {
+    type master;
+    file "/etc/named/zones/db.101.0.10"; 
+};
+
+zone "cloudapps.stratio.lan" IN { 
+    type master;
+    file "/etc/named/zones/db.cloudapps.stratio.lan";
+    allow-update { key cloudapps.stratio.lan ; } ; 
+};
