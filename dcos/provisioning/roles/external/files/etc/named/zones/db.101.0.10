@@ -17,4 +17,4 @@ $TTL 604800 ; 1 week
 103 IN        PTR     a1.comodoo.dcos.     
 104 IN        PTR     a2.comodoo.dcos.     
 105 IN        PTR     p1.comodoo.dcos.     
-106 IN        PTR     .     
+106 IN        PTR     p2.comodoo.dcos.     
