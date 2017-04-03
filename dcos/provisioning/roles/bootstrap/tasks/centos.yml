@@ -44,8 +44,6 @@
       - 100.0.10.102
       resolvers:
       - 101.0.10.100
-      - 8.8.4.4
-      - 8.8.8.8
       ssh_port: 22
       ssh_user: vagrant
       superuser_username: admin
