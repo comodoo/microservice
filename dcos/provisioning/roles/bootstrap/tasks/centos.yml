@@ -41,7 +41,7 @@
       ip_detect_filename: /genconf/ip-detect
       master_discovery: static
       master_list:
-      - 100.0.10.102
+      - 101.0.10.102
       resolvers:
       - 101.0.10.100
       ssh_port: 22
