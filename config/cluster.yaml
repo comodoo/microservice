@@ -24,28 +24,28 @@
   type: agent-private
   box: centos/7
   ip: 101.0.10.103
-  mem: 2048
-  cpu: 2
+  mem: 8192
+  cpu: 4
   aditional_disk: 10G
 - name: a2
   type: agent-private
   box: centos/7
   ip: 101.0.10.104
-  mem: 2048
-  cpu: 2
+  mem: 8092
+  cpu: 4
   aditional_disk: 10G
 - name: p1
   type: agent-public
   box: centos/7
   ip: 101.0.10.105
-  mem: 2048
+  mem: 4096
   cpu: 2
   aditional_disk: 10G
 - name: p2
   type: agent-public
   box: centos/7
   ip: 101.0.10.106
-  mem: 2048
+  mem: 4096
   cpu: 2
   aditional_disk: 10G
 
