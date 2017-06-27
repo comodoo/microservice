@@ -1,0 +1,70 @@
+{
+  "id": "/drone/server",
+  "cmd": null,
+  "cpus": 0.1,
+  "mem": 64,
+  "disk": 0,
+  "instances": 3,
+  "constraints": [
+    [
+      "hostname",
+      "GROUP_BY"
+    ]
+  ],
+  "container": {
+    "type": "DOCKER",
+    "volumes": [
+      {
+        "containerPath": "/var/run/docker.sock",
+        "hostPath": "/var/run/docker.sock",
+        "mode": "RW"
+      }
+    ],
+    "docker": {
+      "image": "drone/drone:0.4",
+      "network": "BRIDGE",
+      "portMappings": [
+        {
+          "containerPort": 8000,
+          "hostPort": 8000,
+          "servicePort": 0,
+          "protocol": "tcp",
+          "labels": {}
+        }
+      ],
+      "privileged": false,
+      "parameters": [],
+      "forcePullImage": false
+    }
+  },
+  "env": {
+    "DATABASE_CONFIG": “<database_config>“,
+    "DATABASE_DRIVER": "mysql",
+    "DRONE_ADMIN": "<github_admin_username>",
+    "DRONE_ADMIN_ALL": "false",
+    "DRONE_AGENT_SECRET": "super-secret-string-here",
+    "DRONE_GITHUB": "true",
+    "DRONE_OPEN": "false",
+    "PLUGIN_FILTER": "plugins/* mycompany/*",
+    "PLUGIN_PARAMS": "...",
+    "REMOTE_CONFIG": "https://github.com?client_id=<github_client_id>&client_secret=<github_client_secret>",
+    "REMOTE_DRIVER": "github"
+  },
+  "healthChecks": [
+    {
+      "path": "/",
+      "protocol": "HTTP",
+      "portIndex": 0,
+      "gracePeriodSeconds": 60,
+      "intervalSeconds": 10,
+      "timeoutSeconds": 20,
+      "maxConsecutiveFailures": 3,
+      "ignoreHttp1xx": false
+    }
+  ],
+  "labels": {
+    "HAPROXY_0_VHOST": "drone.example.com",
+    "HAPROXY_0_REDIRECT_TO_HTTPS": "true",
+    "HAPROXY_GROUP": "external,internal"
+  }
+}
