@@ -1,0 +1,29 @@
+{
+  "id": "/odoo",
+  "cpus": 1,
+  "mem": 1024,
+  "instances": 1,
+  "container": {
+    "type": "DOCKER",
+      "docker": {
+      "image": "odoo",
+      "network": "BRIDGE",
+      "portMappings": [
+        {
+          "containerPort": 8069,
+          "hostPort": 0,
+          "protocol": "tcp",
+	  "servicePort": 0
+        }
+      ]
+    }
+  },
+ "labels":{
+       "HAPROXY_GROUP":"external",
+       "HAPROXY_0_VHOST": "comodoo.microserviceslab.com"
+   },
+ "env": {
+    "HOST": "postgres.marathon.mesos",
+    "PORT": "13588"
+  }
+}

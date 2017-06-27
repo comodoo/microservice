@@ -1,0 +1,15 @@
+{
+    "id": "myapp",
+    "container": {
+    "type": "DOCKER",
+    "docker": {
+          "image": "willejs/go-hello-world",
+          "network": "BRIDGE",
+          "portMappings": [
+            { "hostPort": 80, "containerPort": 8484, "protocol": "tcp"}
+          ]
+        }
+    },
+    "instances": 1,
+    "cpus": 0.25
+}
